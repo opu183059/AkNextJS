@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import NavMenu from "./NavMenu";
 
 const Navbar = () => {
   return (
@@ -40,32 +40,7 @@ const Navbar = () => {
             </h1>
           </div>
         </div>
-        <div className="flex gap-4 items-center justify-center">
-          <Link
-            href={"/"}
-            className="cursor-pointer uppercase hover:text-white/50"
-          >
-            Home
-          </Link>
-          <Link
-            href={"/"}
-            className="cursor-pointer uppercase hover:text-white/50"
-          >
-            about
-          </Link>
-          <Link
-            href={"/"}
-            className="cursor-pointer uppercase hover:text-white/50"
-          >
-            Portfolio
-          </Link>
-          <Link
-            href={"/"}
-            className="cursor-pointer uppercase hover:text-white/50"
-          >
-            contact
-          </Link>
-        </div>
+        <NavMenu />
       </div>
     </div>
   );

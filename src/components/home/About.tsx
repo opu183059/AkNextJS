@@ -1,4 +1,6 @@
 import React from "react";
+import animationData from "../../../public/coading.json";
+import LottieAnimation from "../shared/LottieAnimation";
 
 const About = () => {
   return (
@@ -17,6 +19,7 @@ const About = () => {
             data-aos-duration="2000"
             className="flex flex-col justify-center items-center"
           >
+            <LottieAnimation animationData={animationData} loop={true} />
             <p className="mb-5 text-center text-lg p-5 lg:p-0">
               Skilled web developer specialized in frontend technologies such as
               HTML, CSS, JavaScript, and React.js. Adept at creating

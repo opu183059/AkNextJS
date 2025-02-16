@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import LottieAnimation from "../shared/LottieAnimation";
+import animationData from "../../../public/143395-contact.json";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +30,7 @@ const Contact = () => {
           data-aos-duration="1000"
           className="flex flex-col items-center justify-between"
         >
-          <p>Lotifiles</p>
+          <LottieAnimation animationData={animationData} />
         </div>
         <form
           onSubmit={handleSubmit}
