@@ -1,17 +1,39 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NavMenu = () => {
+  const pathname = usePathname();
+  console.log(pathname);
+
+  const navmenu = [
+    {
+      name: "Home",
+      href: "/",
+    },
+    {
+      name: "About",
+      href: "/about",
+    },
+    {
+      name: "Projects",
+      href: "/projects",
+    },
+  ];
+
   return (
     <div className="flex gap-4 items-center justify-center">
-      <Link href={"/"} className="cursor-pointer uppercase hover:text-white/50">
-        Home
-      </Link>
-      <Link href={"/"} className="cursor-pointer uppercase hover:text-white/50">
-        about
-      </Link>
-      <Link href={"/"} className="cursor-pointer uppercase hover:text-white/50">
-        Projects
-      </Link>
+      {navmenu.map((item) => (
+        <Link
+          href={item.href}
+          className={`${
+            pathname == item.href ? "active" : " hover:text-white/50"
+          } cursor-pointer uppercase`}
+          key={item.name}
+        >
+          {item.name}
+        </Link>
+      ))}
     </div>
   );
 };
