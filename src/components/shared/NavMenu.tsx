@@ -12,12 +12,12 @@ const NavMenu = () => {
       href: "/",
     },
     {
-      name: "About",
-      href: "/about",
-    },
-    {
       name: "Projects",
       href: "/projects",
+    },
+    {
+      name: "Blog",
+      href: "/blog",
     },
   ];
 
@@ -34,6 +34,9 @@ const NavMenu = () => {
           {item.name}
         </Link>
       ))}
+      <Link className="btn10" href={"/login"}>
+        Login
+      </Link>
     </div>
   );
 };
