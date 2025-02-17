@@ -1,8 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import NavMenu from "./NavMenu";
+import { authOptions } from "@/utils/authOptions";
+import { getServerSession } from "next-auth";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const session = await getServerSession(authOptions);
   return (
     <div className="sticky top-0 left-0 w-full lg:pt-1 text-center z-50">
       <div className="lg:flex justify-between items-center container mx-auto bg-black/20 lg:rounded-full px-8 py-3 backdrop-blur-2xl">
@@ -40,7 +43,7 @@ const Navbar = () => {
             </h1>
           </div>
         </div>
-        <NavMenu />
+        <NavMenu session={session} />
       </div>
     </div>
   );

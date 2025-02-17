@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: "Akther uz zaman portfolio website",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

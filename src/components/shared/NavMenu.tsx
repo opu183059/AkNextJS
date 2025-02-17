@@ -1,10 +1,18 @@
 "use client";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const NavMenu = () => {
+type UserProps = {
+  user?: {
+    name?: string | null | undefined;
+    email?: string | null | undefined;
+    image?: string | null | undefined;
+  };
+};
+
+const NavMenu = ({ session }: { session: UserProps | null }) => {
   const pathname = usePathname();
-  console.log(pathname);
 
   const navmenu = [
     {
@@ -34,9 +42,15 @@ const NavMenu = () => {
           {item.name}
         </Link>
       ))}
-      <Link className="btn10" href={"/login"}>
-        Login
-      </Link>
+      {session?.user ? (
+        <button onClick={() => signOut()} className="btn10">
+          Logout
+        </button>
+      ) : (
+        <Link className="btn10" href={"/login"}>
+          Login
+        </Link>
+      )}
     </div>
   );
 };
