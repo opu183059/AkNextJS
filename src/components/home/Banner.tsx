@@ -1,23 +1,17 @@
-"use client";
 import {
   AiFillFacebook,
   AiFillLinkedin,
   AiOutlineMail,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
-import Link from "next/link";
+
 import opuImage from "../../../public/avatar3.png";
 import Image from "next/image";
 import { GoMail } from "react-icons/go";
 import TypingAnimation from "./homecomponents/TypingAnimation";
-import { useEffect } from "react";
-import Aos from "aos";
+import DownloadButton from "./homecomponents/DownloadButton";
 
 const Banner = () => {
-  useEffect(() => {
-    Aos.init();
-  }, []);
-
   return (
     <div className="min-h-screen container mx-auto lg:pt-0 pt-32" id="home">
       <div className="flex flex-col lg:flex-row justify-between items-center min-h-screen lg:gap-12">
@@ -83,16 +77,10 @@ const Banner = () => {
             data-aos-duration="2000"
             className="flex justify-center lg:justify-start items-center gap-4 mt-4"
           >
-            <Link href={"/"} className="btn10 cursor-pointer">
+            <a href="#contact" className="btn10 cursor-pointer">
               <GoMail></GoMail>Message
-            </Link>
-            {/* <a
-              ref={resume}
-              download="aktheruzzaman_resume.pdf"
-              className="btn10 cursor-pointer"
-            >
-              <AiOutlineDownload></AiOutlineDownload> Resume
-            </a> */}
+            </a>
+            <DownloadButton />
           </div>
         </div>
         <div
