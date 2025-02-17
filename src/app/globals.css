@@ -85,7 +85,7 @@ body {
   color: #c266d3;
 }
 
-/* custome button  */
+/* custome button 1*/
 
 .btn10 {
   padding: 5px 20px;
@@ -168,6 +168,41 @@ body {
   margin-top: 40px !important;
   padding: 10px 0px !important;
 }
+
+/* custom button 2  */
+.btn2 {
+  display: inline-block;
+  padding: 3px 15px;
+  border: 1px solid #9316c5;
+  text-transform: uppercase;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  font-family: inherit;
+}
+
+.btn2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ae22e6;
+  transform: translateX(-100%);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.btn2:hover::before {
+  transform: translateX(0);
+}
+
 /* scrool on hover  */
 .test {
   transition: ease-in-out 12s;

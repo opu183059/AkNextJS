@@ -12,7 +12,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="container mx-auto grid grid-cols-12">
+    <div className="container mx-auto grid grid-cols-12 pt-2 gap-4">
       <div className="col-span-3">
         <DashboardSidebar />
       </div>

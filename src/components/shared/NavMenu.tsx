@@ -43,11 +43,11 @@ const NavMenu = ({ session }: { session: UserProps | null }) => {
         </Link>
       ))}
       {session?.user ? (
-        <button onClick={() => signOut()} className="btn10">
+        <button onClick={() => signOut()} className="btn2">
           Logout
         </button>
       ) : (
-        <Link className="btn10" href={"/login"}>
+        <Link className="btn2 !bg-[#be2df8]" href={"/login"}>
           Login
         </Link>
       )}
