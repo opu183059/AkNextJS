@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { FaCog, FaHome, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 
 const DashboardSidebar = () => {
   return (
@@ -11,26 +11,17 @@ const DashboardSidebar = () => {
             href="/dashboard"
             className="flex items-center space-x-2 p-3 rounded-md hover:bg-[#ca42ff]/50"
           >
-            <FaHome className="h-5 w-5" />
-            <span>Dashboard</span>
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/dashboard/user-info"
-            className="flex items-center space-x-2 p-3 rounded-md hover:bg-[#ca42ff]/50"
-          >
             <FaUser className="h-5 w-5" />
             <span>User Info</span>
           </Link>
         </li>
         <li>
           <Link
-            href="/dashboard/settings"
+            href="/dashboard/blog/create-blog"
             className="flex items-center space-x-2 p-3 rounded-md hover:bg-[#ca42ff]/50"
           >
-            <FaCog className="h-5 w-5" />
-            <span>Settings</span>
+            <FaUser className="h-5 w-5" />
+            <span>Create Blog</span>
           </Link>
         </li>
       </ul>
