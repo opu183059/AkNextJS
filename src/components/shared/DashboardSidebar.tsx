@@ -17,6 +17,15 @@ const DashboardSidebar = () => {
         </li>
         <li>
           <Link
+            href="/dashboard/blog"
+            className="flex items-center space-x-2 p-3 rounded-md hover:bg-[#ca42ff]/50"
+          >
+            <FaUser className="h-5 w-5" />
+            <span>Blogs</span>
+          </Link>
+        </li>
+        <li>
+          <Link
             href="/dashboard/blog/create-blog"
             className="flex items-center space-x-2 p-3 rounded-md hover:bg-[#ca42ff]/50"
           >
