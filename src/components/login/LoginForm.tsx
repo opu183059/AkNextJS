@@ -77,7 +77,7 @@ const LoginForm = () => {
       <button
         onClick={() =>
           signIn("github", {
-            callbackUrl: "/dashboard",
+            callbackUrl: "https://ak-next-js.vercel.app/dashboard",
           })
         }
         className="flex gap-2 items-center border-2 border-gray-600 px-2 py-1 rounded-md cursor-pointer mt-4 w-full justify-center"
