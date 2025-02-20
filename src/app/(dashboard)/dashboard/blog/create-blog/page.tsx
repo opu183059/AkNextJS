@@ -121,7 +121,7 @@ const CreateBlog = () => {
             Blog Content
           </label>
         </div>
-        <button type="submit" className="btn2 !rounded-md">
+        <button type="submit" className="btn2 ">
           Create Blog
         </button>
       </form>
