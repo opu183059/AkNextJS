@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import animationData from "../../../public/coading.json";
 import LottieAnimation from "../shared/LottieAnimation";

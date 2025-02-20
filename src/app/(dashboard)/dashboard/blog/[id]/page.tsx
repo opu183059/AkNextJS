@@ -36,7 +36,7 @@ const SingleBlogPage = () => {
     };
 
     fetchblog();
-  }, []);
+  }, [params.id]);
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

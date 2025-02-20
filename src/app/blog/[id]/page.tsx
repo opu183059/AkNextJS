@@ -33,7 +33,7 @@ const SingleBlogPage = () => {
     };
 
     fetchblog();
-  }, []);
+  }, [params.id]);
 
   return (
     <div className="container mx-auto mt-2">
