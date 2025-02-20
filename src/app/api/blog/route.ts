@@ -3,14 +3,17 @@ import { MongoClient } from "mongodb";
 
 const uri = process.env.DATABASE_URL;
 const client = new MongoClient(uri as string);
-// const secret = process.env.JWT_SECRET;
 
 // GET Blogs
 export async function GET() {
   try {
     await client.connect();
     const db = client.db("Portfolio");
-    const blogs = await db.collection("blogs").find().toArray();
+    const blogs = await db
+      .collection("blogs")
+      .find()
+      .sort({ createdAt: -1 })
+      .toArray();
     return NextResponse.json(blogs);
   } catch (error) {
     return NextResponse.json(

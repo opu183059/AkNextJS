@@ -50,10 +50,7 @@ const SingleBlogPage = () => {
           height={200}
           className="w-full mt-6 rounded-lg"
         />
-        <p className="mt-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-          hendrerit metus vel ipsum fermentum, nec pharetra justo egestas...
-        </p>
+        <p className="mt-4">{blog?.content}</p>
         <Link
           href="/blog"
           className="text-blue-300 font-medium mt-6 inline-block hover:underline"

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import LottieAnimation from "../shared/LottieAnimation";
 import animationData from "../../../public/143395-contact.json";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,9 +15,33 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
+
+    const id = toast.loading("Sending Message...");
+    const response = await fetch("/api/message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      toast.update(id, {
+        render: "Message sent successfully!",
+        type: "success",
+        isLoading: false,
+        autoClose: 1000,
+      });
+    } else {
+      toast.update(id, {
+        render: "Something went wrong, try again",
+        type: "error",
+        isLoading: false,
+        autoClose: 1000,
+      });
+    }
   };
 
   return (
@@ -46,7 +71,7 @@ const Contact = () => {
               type="name"
               value={formData.name}
               onChange={handleChange}
-              name="from_name"
+              name="name"
               id="name"
               className="block p-3 rounded py-2.5 px-0 w-full text-sm lg:text-base ps-2 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-fuchsia-500 peer"
               placeholder=" "
@@ -62,7 +87,7 @@ const Contact = () => {
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="email"
-              name="from_email"
+              name="email"
               value={formData.email}
               onChange={handleChange}
               id="email"
