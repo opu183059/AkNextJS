@@ -174,7 +174,7 @@ const SingleBlogPage = () => {
             Blog Content
           </label>
         </div>
-        <button type="submit" className="btn2 !rounded-md">
+        <button type="submit" className="btn2">
           Update Blog
         </button>
       </form>
