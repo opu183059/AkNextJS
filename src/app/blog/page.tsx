@@ -10,7 +10,7 @@ const BlogPage = () => {
   useEffect(() => {
     const fetchblogs = async () => {
       try {
-        const response = await fetch("/api/blog");
+        const response = await fetch("/api/blog", { cache: "force-cache" });
         const data = await response.json();
         setBlogs(data);
       } catch (error) {
